@@ -1,5 +1,5 @@
 {% set name = "python-terraform" %}
-{% set version = "0.10.1" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/beelit94/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 81732172b49460b4b79253b7b5dcf6dfdf6a4fe088edf4ae4b909c165d4da871
+  sha256: 77bad01dc61a0b3e5aede028d0e679e00c290c3f9d3178d03f426ad019c76248
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
