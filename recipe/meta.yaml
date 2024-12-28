@@ -10,18 +10,20 @@ source:
   sha256: 77bad01dc61a0b3e5aede028d0e679e00c290c3f9d3178d03f426ad019c76248
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - python_terraform
 
